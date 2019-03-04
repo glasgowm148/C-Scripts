@@ -1,41 +1,15 @@
-CC=gcc
-EXE = sim
+CXX = g++
+CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
+LDFLAGS =  -fsanitize=address
 
-CFLAGS = -Wall
-LDFLAGS = -lm
-OPTCFLAGS = -02
-DEBUGCLGAGS = -g
+SRC = 
+OBJ = $(SRC:.cc=.o)
+EXEC = makefile
 
-objs= main.c complexmath.c validate.c
+all: $(EXEC)
 
-all : $(EXE)
+$(EXEC): $(OBJ)
+	$(CXX) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS)
 
-opt: CFLAGS+=$(OPTCFLAGS)
-opt: $(EXE)
-
-debug: CFLAG+= $(DEBUGCFLAGS)
-debug: $(EXE)
-
-$(EXE): $(objs)
-		$(CC) $(LDFLAGS) -o $@ $^ -lm
-
-%.o:%.c
-		$(CC) $(CFLAGS) -c $< -lm
-	
-
-main: $(objs) 
-	$(CC) $^ -o $@ -lm
-
-main.o: main.c
-	$(CC) -c $< 
-
-complexmath.o: complexmath.c
-	$(CC) -c $< 
-
-validate.o: validate.c
-	$(CC) -c $< 
-
-
-.PHONY: clean
 clean:
-		rm -f *.o 
+	rm -rf $(OBJ) $(EXEC)

@@ -1,13 +1,12 @@
-CC= gcc --std=c99  -I includes
+CC=gcc
 EXE = sim
 
-CFLAGS= -std=c99
+CFLAGS = -Wall
 LDFLAGS = -lm
 OPTCFLAGS = -02
-DEBUGCLGAGS = -I
+DEBUGCLGAGS = -g
 
 objs= external_libraries.c libturtle.a
-
 
 all : $(EXE)
 
@@ -24,13 +23,10 @@ $(EXE): $(objs)
 		$(CC) $(CFLAGS) -c $<
 	
 
-external_libraries: $(objs) 
+simulation: $(objs) 
 	$(CC) $^ -o $@ 
 
-external_libraries.o: external_libraries.c
-	$(CC) -c $< 
-
-libturtle.o: libturtle.a
+simulation.o: simulation.c
 	$(CC) -c $< 
 
 .PHONY: clean

@@ -6,7 +6,7 @@ LDFLAGS = -lm
 OPTCFLAGS = -02
 DEBUGCLGAGS = -g
 
-objs= building_the_large.o printpgm.o 
+OBJ= building_the_large.o printpgm.o 
 
 all : $(EXE)
 
@@ -16,14 +16,14 @@ opt: $(EXE)
 debug: CFLAG+= $(DEBUGCFLAGS)
 debug: $(EXE)
 
-$(EXE): $(objs)
+$(EXE): $(OBJ)
 		$(CC) $(LDFLAGS) -o $@ $^
 
 %.o:%.c
 		$(CC) $(CFLAGS) -c $<
 	
 
-simulation: $(objs) 
+simulation: $(OBJ) 
 	$(CC) $^ -o $@ 
 
 simulation.o: simulation.c
@@ -31,4 +31,4 @@ simulation.o: simulation.c
 
 .PHONY: clean
 clean:
-		rm -f *.o 
+		rm -rf $(OBJ) $(EXEC)
