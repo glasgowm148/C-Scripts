@@ -1,4 +1,4 @@
-// Mark Glasgow :: 2336003G
+// Mark Glasgow 
 // Exercise 2: Strings
 // This is a coding question.
 // Write a program which reads in a string, of up to 100 characters, after prompting the user to do so.

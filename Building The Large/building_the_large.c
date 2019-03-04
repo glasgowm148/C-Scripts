@@ -1,7 +1,5 @@
 /*
- * PGM output code - Lab 3
- * Starting with your code from Lab 4, 
- * 
+ *
  * split out the function to print out the PGM file into a separate C source file (called printpgm.c ). 
  * 
  * Create an appropriate header file to allow your function to be used in other code. 

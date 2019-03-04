@@ -1,4 +1,4 @@
-// Mark Glasgow :: 2336003G
+// Mark Glasgow 
 // Exercise 3: Functions and Arrays and CLA
 
 // Code incomplete 

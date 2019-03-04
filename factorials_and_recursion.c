@@ -1,4 +1,4 @@
-// Mark Glasgow :: 2336003G
+// Mark Glasgow
 // Write a function, called factorial which, when passed an int, 
 // returns the factorial of that number, by using an appropriate loop inside the function.
 #include <stdio.h>

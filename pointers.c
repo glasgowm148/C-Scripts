@@ -1,4 +1,4 @@
-// Mark Glasgow :: 2336003G
+// Mark Glasgow
 
 #include <stdio.h>
 
