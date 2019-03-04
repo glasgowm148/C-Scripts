@@ -1,5 +1,16 @@
 #include "simulation.h"
 
+/** 
+ * 
+ * Mark Glasgow : 2336003g
+ * C file for simulation - header file is included above
+ * which contains the definition for the var C, and
+ * the function protocols. 
+ * 
+ */
+
+
+
 /**
  * Returns the relitivistic mass of an object given its rest mass and velocity
  */

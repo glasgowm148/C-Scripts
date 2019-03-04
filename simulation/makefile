@@ -6,7 +6,7 @@ LDFLAGS = -lm
 OPTCFLAGS = -02
 DEBUGCLGAGS = -g
 
-objs = main.o simulation.o
+objs = main.c simulation.c
 
 all : $(EXE)
 
@@ -17,14 +17,17 @@ debug: CFLAG+= $(DEBUGCFLAGS)
 debug: $(EXE)
 
 $(EXE): $(objs)
-		$(CC) $(LDFLAGS) -o $@ $^
+		$(CC) $(LDFLAGS) -o $@ $^ 
 
 %.o:%.c
-		$(CC) $(CFLAGS) -c $<
+		$(CC) $(CFLAGS) -c $< -lm
 	
 
-simulation: $(objs) 
-	$(CC) $^ -o $@ 
+main: $(objs) 
+	$(CC) $^ -o $@ -lm
+
+main.o: main.c
+	$(CC) -c $< 
 
 simulation.o: simulation.c
 	$(CC) -c $< 

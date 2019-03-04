@@ -1,5 +1,13 @@
-#include "main.h"
+#include <stdio.h>
+#include "simulation.h"
 
+
+/** 
+ * Mark Glasgow : 2336003g
+ * main.c split from the provided code. This initialises the doubles
+ * and keeps going until we hit the speed of light (C)
+ * 
+ */
 int main(int argc, char* argv[])
 {
 	
